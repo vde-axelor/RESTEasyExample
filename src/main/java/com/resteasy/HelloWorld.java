@@ -6,6 +6,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class HelloWorld {
 	private String message;
 
+
 	public String getMessage() {
 		return message;
 	}
@@ -14,7 +15,9 @@ public class HelloWorld {
 		this.message = message;
 	}
 
+
 	public HelloWorld() {
 		super();
+		
 	}
 }
