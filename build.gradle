@@ -1,0 +1,15 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'eclipse-wtp'
+apply plugin: 'war'
+
+repositories {
+	mavenCentral()
+	jcenter()
+	mavenLocal()
+}
+dependencies {
+    implementation 'org.jboss.resteasy:resteasy-jaxrs:3.9.0.Final'
+    implementation 'org.jboss.resteasy:resteasy-servlet-initializer:3.9.0.Final'
+    implementation 'org.jboss.resteasy:resteasy-jackson2-provider:3.9.0.Final'
+}
