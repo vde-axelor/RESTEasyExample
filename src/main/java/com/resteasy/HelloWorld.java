@@ -4,20 +4,29 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class HelloWorld {
-	private String message;
+	private String name;
+	private String city;
+	
 
-
-	public String getMessage() {
-		return message;
+	public String getName() {
+		return name;
 	}
 
-	public void setMessage(String message) {
-		this.message = message;
+	public void setName(String name) {
+		this.name = name;
 	}
 
+	public String getCity() {
+		return city;
+	}
 
-	public HelloWorld() {
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public HelloWorld(String name,String city) {
 		super();
-		
+		this.name=name;
+		this.city=city;
 	}
 }

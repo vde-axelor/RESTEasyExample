@@ -10,12 +10,10 @@ import javax.ws.rs.core.Response;
 public class HelloWorldResource {
 	
 	@GET
-	@Path("/message")
     @Produces(MediaType.APPLICATION_JSON)
 
    public Response helloWorld() {
-    	HelloWorld hw = new  HelloWorld();
-    	hw.setMessage("Hello World!!!");
+    	HelloWorld hw = new  HelloWorld("Vishwa","Surat");	
     	return Response.ok(hw).build();
     }
 }
