@@ -18,12 +18,12 @@ public class form extends HttpServlet{
 		PrintWriter pw = resp.getWriter();
 		
 		pw.println("<html><body align='center'>");  
-		pw.println("<h1>Welcome to  Registeration Form</h1>");  
+		pw.println("<h1>Registeration Form</h1>");  
 		pw.print("<form action='test/create' method='post' > ");
-		pw.println("<input type='text' name='id' placeholder='Id'> &nbsp; ");
-		pw.println("<input type='text' name='fname' placeholder='First Name'> &nbsp; ");
-		pw.println("<input type='text' name='lname' placeholder='Last Name'> &nbsp; ");
-		pw.println("<input type='text' name='city' placeholder='City'> &nbsp; ");
+		pw.println("<input type='text' name='id' placeholder='Id'> <br> ");
+		pw.println("<input type='text' name='fname' placeholder='First Name'> <br> ");
+		pw.println("<input type='text' name='lname' placeholder='Last Name'> <br> ");
+		pw.println("<input type='text' name='city' placeholder='City'> <br> ");
 		pw.println("<input type='submit' name='submit'>");
 		pw.print("</form>");
 	}

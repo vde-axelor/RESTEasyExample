@@ -22,7 +22,7 @@ public class StudentResource {
 		Student st = new  Student(1, "Vishwa", "Desai","Surat");
 		return Response.ok(st).build();
 	}
-//	
+	
 	
 	@Path("/helloPost")				
 	@POST	

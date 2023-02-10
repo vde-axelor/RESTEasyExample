@@ -3,6 +3,7 @@ package com.resteasy;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
+
 public class Student {
 	private int id;
 	private String fname,lname;
