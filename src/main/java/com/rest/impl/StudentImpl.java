@@ -1,25 +1,51 @@
 package com.rest.impl;
 
-import javax.persistence.EntityManager;
-import javax.transaction.Transactional;
-
-import com.google.inject.Inject;
-import com.google.inject.Provider;
+import java.util.List;
 import com.rest.db.StudentDetail;
 import com.rest.service.StudentService;
+import javax.persistence.EntityManager;
+import com.google.inject.Inject;
+import com.google.inject.Provider;
+import com.google.inject.persist.Transactional;
 
 public class StudentImpl implements StudentService{
 	@Inject
-	private Provider<EntityManager> em;
+	private EntityManager em;
+	
+	@Inject
+	private Provider<EntityManager> emp;
+	
+	@Override
+	public StudentDetail addStudent(String fname, String lname, String city, String dob) {
+		return null;
+	}
 
+	@Override
+	public StudentDetail updateStudent(int id, String fname, String lname, String city, String dob) {
+		return null;
+	}
+
+	@Override
+	public StudentDetail deleteStudent(int id) {
+		return null;
+	}
+	
 	@Transactional
 	@Override
-	public void addStudent(String fname,String lname,String city,String dob) {
-		StudentDetail sd=new StudentDetail(fname,lname,city,dob);
-		em.get().persist(sd);
-		System.out.println("Name is: "+fname + " "+lname);
-		System.out.println("City is: "+city);
-		System.out.println("Date Of Birth is: "+dob);
+	public List<StudentDetail> getAllStudent() {
+		em = emp.get();
+		List<StudentDetail> studentlist = em.createQuery("from studentdetail",StudentDetail.class).getResultList();
+		System.out.println(studentlist);
+
+		return studentlist;
+	}
+	
+
+
+	@Override
+	public StudentDetail getStudentbyid(int id) {
+		return null;
+
 	}
 }
 
