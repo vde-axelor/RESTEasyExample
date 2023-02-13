@@ -36,15 +36,14 @@ public class StudentResource {
 		sd.setDob("3-2-2001");
 		return Response.ok(sd).build();
 	}
-	
-	@POST
-	@Path("/create")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Response createUser(@FormParam("fname") String fname, @FormParam("lname") String lname,
-			@FormParam("city") String city,@FormParam("dob") String dob) {
-		ss.addStudent(fname, lname, city,dob);
-		return Response.status(200).entity("Added ..............").build();
 
+	
+	@POST				//return json formal value
+	@Path("/add")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response postEmp(@FormParam("fname") String fname,@FormParam("lname") String lname,@FormParam("city") String city,@FormParam("dob") String dob) {
+		ss.addStudent(fname, lname, city, dob);
+		return Response.status(200).entity("Added SuccessFully.............").build();
 	}
 	
 }

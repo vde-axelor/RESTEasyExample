@@ -6,12 +6,12 @@
 	<!-- A JPA Persistence Unit -->
 	<persistence-unit name="test" transaction-type="RESOURCE_LOCAL">
 		<class>com.rest</class>
-		
+			
 		 <properties>
          <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
          <property name="javax.persistence.jdbc.user" value="axelor"/>
          <property name="javax.persistence.jdbc.password" value="axelor"/>
-         <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost/restdb"/>
+         <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/restdb"/>
          <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
          <property name="hibernate.show_sql" value="true"/>
          <property name="hibernate.hbm2ddl.auto" value="update"/>
