@@ -18,7 +18,7 @@
 		
 	  <%  StudentDetail sd = (StudentDetail) request.getAttribute("StudentById");  %>
 
-       <form action="<%= request.getContextPath()%>/student/update/<%= sd.getId()  %>" method = "post">
+       <form action="/student/update/" method = "post">
 		First Name : <input type="text" name="fname" value="<%= sd.getFname()  %>"> <br>
 		Last  Name : <input type="text" name="lname" value="<%= sd.getLname() %>" > <br>
 		City : <input type="text" name="city"  value="<%=  sd.getCity() %>"> <br>

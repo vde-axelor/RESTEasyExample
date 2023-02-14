@@ -90,10 +90,11 @@ public class StudentResource {
 	}
 	
 	
-	@Path("/delete/{id}")	
+	@Path("/delete")	
 	@Produces(MediaType.APPLICATION_JSON)
 	@DELETE
-	public Response deleteUser(@PathParam("id") Integer id) {
+	@POST
+	public Response deleteUser(@FormParam("id") int id) {
 		
 		ss.deleteStudent(id);
 		return Response.status(200).entity("Deleted SuccessFullly!!!").build();
@@ -101,12 +102,21 @@ public class StudentResource {
 	
 	
 
-	@Path("/update/{id}")
-	@PUT
+	@Path("/update")
+	@POST
 	@Produces(MediaType.APPLICATION_JSON)
-	public Response updateUser(@PathParam("id") int id, @FormParam("fname") String fname,
+	public Response updateUser(@FormParam("id") int id, @FormParam("fname") String fname,
 			@FormParam("lname") String lname, @FormParam("city") String city,@FormParam("dob") String dob) {
 		ss.updateStudent(id,fname,lname,city,dob);
 		return Response.status(Response.Status.OK).entity("Updated SuccessFully..").build();
 	}
+	
+//	@Path("/update")
+//	@POST
+//	@Produces(MediaType.APPLICATION_JSON)
+//	public Response updateUser(@PathParam("id") int id, @FormParam("fname") String fname,
+//			@FormParam("lname") String lname, @FormParam("city") String city,@FormParam("dob") String dob) {
+//		ss.updateStudent(id,fname,lname,city,dob);
+//		return Response.status(Response.Status.OK).entity("Updated SuccessFully..").build();
+//	}
 }
