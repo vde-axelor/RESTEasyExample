@@ -16,7 +16,7 @@ import com.rest.module.StudentModule;
 public class StudentListner extends GuiceResteasyBootstrapServletContextListener{
 	@Override
 	protected List<? extends Module> getModules(ServletContext context) {
-		return Arrays.asList(new JpaPersistModule("test"),new StudentModule());
+		return Arrays.asList(new JpaPersistModule("rest"),new StudentModule());
 
 	}
 	
