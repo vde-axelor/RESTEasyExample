@@ -34,7 +34,7 @@ public class StudentImpl implements StudentService {
 		em.getTransaction().commit();
 		System.out.println("Your id is :" + id);
 	}
-
+	
 	@Override
 	public void updateStudent(int id, String fname, String lname, String city,String dob) {
 		em.getTransaction().begin();
@@ -44,6 +44,12 @@ public class StudentImpl implements StudentService {
 		sd.setLname(lname);
 		sd.setCity(city);
 		sd.setDob(dob);
+		emp.get().persist(sd);
+		System.out.println("Your first name is : " + sd.getFname());
+		System.out.println("Your Last name is : " + sd.getLname());
+		System.out.println("Your City name is : " + sd.getCity());
+		System.out.println("Your Date Of Birth is : " + sd.getDob());
+
 		em.getTransaction().commit();
 
 	}

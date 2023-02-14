@@ -81,23 +81,32 @@ public class StudentResource {
 		return Response.status(200).entity("Added SuccessFullly!!!").build();
 	}
 
-
+	@GET 					
+	@Path("/update/{id}")
+	
+	public View GetEmpbyid1(@PathParam("id") Integer id) {
+		StudentDetail sd = ss.getStudentbyid(id);
+		return new View("/update.jsp",sd,"StudentById");
+	}
 	
 	
 	@Path("/delete/{id}")	
 	@Produces(MediaType.APPLICATION_JSON)
 	@DELETE
 	public Response deleteUser(@PathParam("id") Integer id) {
+		
 		ss.deleteStudent(id);
 		return Response.status(200).entity("Deleted SuccessFullly!!!").build();
 	}
+	
+	
 
 	@Path("/update/{id}")
 	@PUT
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response updateUser(@PathParam("id") int id, @FormParam("fname") String fname,
 			@FormParam("lname") String lname, @FormParam("city") String city,@FormParam("dob") String dob) {
-		ss.updateStudent(id, fname, lname, city,dob);
-		return Response.status(Response.Status.OK).build();
+		ss.updateStudent(id,fname,lname,city,dob);
+		return Response.status(Response.Status.OK).entity("Updated SuccessFully..").build();
 	}
 }
