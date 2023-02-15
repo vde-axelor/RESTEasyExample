@@ -12,7 +12,7 @@
 <title>Display Student List</title>
 </head>
 <body>
-	<h1 align="center">Our Student</h1>
+	<h1 align="center">Student List</h1>
 
 		<table border="1" align="center">
 		<thead>

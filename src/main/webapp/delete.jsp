@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body align="center">
 	<h1>Student Register Form</h1>
 		<form action="student/delete" method = "post">
 		Id         : <input type="int" name="id" placeholder="Enter Id"><br>

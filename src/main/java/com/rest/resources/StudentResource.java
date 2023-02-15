@@ -2,6 +2,7 @@ package com.rest.resources;
 
 import java.util.List;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
@@ -18,6 +19,8 @@ import org.jboss.resteasy.plugins.providers.html.View;
 import com.google.inject.Inject;
 import com.rest.db.StudentDetail;
 import com.rest.service.StudentService;
+
+import net.bytebuddy.asm.Advice.Return;
 
 @Path("/student")
 public class StudentResource {
@@ -92,6 +95,7 @@ public class StudentResource {
 	
 	@Path("/delete")	
 	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes("text/plain")
 	@DELETE
 	@POST
 	public Response deleteUser(@FormParam("id") int id) {
@@ -105,10 +109,19 @@ public class StudentResource {
 	@Path("/update")
 	@POST
 	@Produces(MediaType.APPLICATION_JSON)
+//	@Consumes(MediaType.APPLICATION_JSON)
 	public Response updateUser(@FormParam("id") int id, @FormParam("fname") String fname,
 			@FormParam("lname") String lname, @FormParam("city") String city,@FormParam("dob") String dob) {
 		ss.updateStudent(id,fname,lname,city,dob);
 		return Response.status(Response.Status.OK).entity("Updated SuccessFully..").build();
+	}
+	
+	@POST
+	@Path("/send")
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response consumeJSON(StudentService user) {
+		String opt=user.toString();
+		return Response.status(200).entity(opt).build();
 	}
 	
 //	@Path("/update")

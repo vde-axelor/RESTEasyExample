@@ -24,4 +24,6 @@ dependencies {
 	implementation 'javax.servlet:javax.servlet-api:3.1.0'
 	implementation 'org.jboss.resteasy:resteasy-jackson-provider:3.0.4.Final'
 	implementation 'org.jboss.resteasy:resteasy-html:3.6.0.Final'
+	implementation 'org.jboss.resteasy:resteasy-client:6.2.2.Final'
+	
 }
